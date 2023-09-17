@@ -1,0 +1,12 @@
+<h1>Editing Book</h1>
+<%= form_with model: @list do |f| %>
+  <h4>本のタイトル</h4>
+  <%= f.text_field :title %>
+  <h4>感想</h4>
+  <%= f.text_area :body %>
+ 
+  <%= f.submit 'Update Book' %>
+  
+  <%= link_to "show", edit_list_path(@list.id) %>
+　<%= link_to "back", destroy_list_path(@list.id), method: :delete, "data-confirm" => "successfully" %>
+<% end %>
